@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import { Main } from "./site";
-import { Terms } from "./terms";
+import { Home } from "./pages/home";
+import { Terms } from "./pages/terms";
 
 import "./index.scss";
 
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
 	},
 	{
 		path: "*",
-		Component: () => <Main />
+		Component: () => <Home />
 	}
 ]);
 

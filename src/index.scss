@@ -19,8 +19,16 @@
     @screen 2xl {
       font-size: 22px;
     }
+  
     
-    // 
+    ul {
+      margin-left: -1.5rem !important;
+    }
+    @screen sm {
+      ul {
+        margin-left: -0.35rem !important;
+      }
+    }
   }
 
   * {
