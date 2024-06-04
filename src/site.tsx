@@ -138,7 +138,7 @@ export function InfoArea() {
 				</div>
 				<div className="h-px w-full bg-neutral-800" />
 				<div className="flex flex-col gap-2">
-					<h1 className="-mb-2 font-semibold text-neutral-500">Survey Bonus</h1>
+					<h1 className="-mb-2 font-semibold text-pink-400">Survey Bonus</h1>
 					<h2 className="text-balance text-xl font-semibold text-neutral-200 sm:text-xl">
 						Metaverse Personality Types
 					</h2>
