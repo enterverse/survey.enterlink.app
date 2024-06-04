@@ -3,7 +3,7 @@ import { Card } from "../components/card";
 export function Socialite() {
 	return (
 		<Card
-			description="Socialites are the vibrant connectors and charismatic influencers within the virtual community."
+			description="Socialites are the vibrant connectors and charismatic influencers."
 			title="Socialite"
 			traits="Consumptive, Interactive, Safety-Seeking, Spontaneous"
 		>

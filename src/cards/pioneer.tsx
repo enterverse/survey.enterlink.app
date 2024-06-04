@@ -3,7 +3,7 @@ import { Card } from "../components/card";
 export function Pioneer() {
 	return (
 		<Card
-			description="Pioneers are the trailblazers who explore and establish new frontiers within the virtual world."
+			description="Pioneers are the trailblazers who explore and establish new frontiers."
 			title="Pioneer"
 			traits="Consumptive, Interactive, Risk-Taking, Strategic"
 		>

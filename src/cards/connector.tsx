@@ -3,7 +3,7 @@ import { Card } from "../components/card";
 export function Connector() {
 	return (
 		<Card
-			description="Connectors are key players in building and maintaining vibrant communities within the metaverse."
+			description="Connectors are key players in building and maintaining vibrant communities."
 			title="Connector"
 			traits="Creative, Interactive, Safety-Seeking, Spontaneous"
 		>

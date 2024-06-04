@@ -3,7 +3,7 @@ import { Card } from "../components/card";
 export function Dynamo() {
 	return (
 		<Card
-			description="Dynamos are energetic and charismatic innovators who bring a burst of creativity and spontaneity to everything they do."
+			description="Dynamos are energetic and charismatic innovators bursting with creativity."
 			title="Dynamo"
 			traits="Creative, Observational, Risk-Taking, Spontaneous"
 		>

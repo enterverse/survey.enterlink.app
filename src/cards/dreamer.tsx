@@ -3,7 +3,7 @@ import { Card } from "../components/card";
 export function Dreamer() {
 	return (
 		<Card
-			description="Dreamers are the idealists and visionaries who imagine what could be possible in virtual worlds."
+			description="Dreamers are the idealists and visionaries who imagine what could be possible."
 			title="Dreamer"
 			traits="Creative, Observational, Safety-Seeking, Spontaneous"
 		>

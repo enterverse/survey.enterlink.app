@@ -3,7 +3,7 @@ import { Card } from "../components/card";
 export function Explorer() {
 	return (
 		<Card
-			description="Explorers are the adventurers of the virtual world, always on the lookout for new experiences and discoveries."
+			description="Explorers are the adventurers of the virtual world, always on the lookout."
 			title="Explorer"
 			traits="Consumptive, Interactive, Risk-Taking, Spontaneous"
 		>

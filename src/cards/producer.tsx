@@ -3,7 +3,7 @@ import { Card } from "../components/card";
 export function Producer() {
 	return (
 		<Card
-			description="The Producer plays a central role in orchestrating and managing large-scale virtual projects and events."
+			description="Producers plays a central role in orchestrating projects and events."
 			title="Producer"
 			traits="Creative, Interactive, Safety-Seeking, Strategic"
 		>
