@@ -1,23 +1,11 @@
 import { Share2 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { copyToClipboard } from "../clipboard";
-import { Adventurer } from "../cards/adventurer";
-import { Analyst } from "../cards/analyst";
-import { Architect } from "../cards/architect";
-import { Connector } from "../cards/connector";
-import { Dreamer } from "../cards/dreamer";
-import { Dynamo } from "../cards/dynamo";
-import { Explorer } from "../cards/explorer";
-import { Guardian } from "../cards/guardian";
-import { Innovator } from "../cards/innovator";
-import { Pioneer } from "../cards/pioneer";
-import { Producer } from "../cards/producer";
-import { Scholar } from "../cards/scholar";
-import { Sentinel } from "../cards/sentinel";
-import { Socialite } from "../cards/socialite";
-import { Visionary } from "../cards/visionary";
-import { Wanderer } from "../cards/wanderer";
+import { useFetch } from "../use-fetch";
+import { Card } from "../components/card";
+import { Skeleton } from "../components/skeleton";
 
 export function Home() {
 	return (
@@ -100,12 +88,12 @@ export function SurveyInfo() {
 					</div>
 					<p className="text-xs text-neutral-500">
 						By taking the survey you agree to the{" "}
-						<a
+						<Link
 							className="rounded underline focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-neutral-50"
-							href="/terms"
+							to="/terms"
 						>
 							Terms and Conditions.
-						</a>
+						</Link>
 					</p>
 				</div>
 				<div className="h-px w-full bg-neutral-800" />
@@ -121,7 +109,29 @@ export function SurveyInfo() {
 	);
 }
 
+interface PersonalityTrait {
+	key: string;
+	name: string;
+	description: string;
+}
+
+interface Personality {
+	key: string;
+	name: string;
+	description: string;
+	shortDescription: string;
+	traits: Array<PersonalityTrait>;
+	activities: Array<string>;
+	values: Array<string>;
+	summary: string;
+	iconUrl: string;
+}
+
 function Personalities() {
+	const { data, error, loading } = useFetch<Array<Personality>>(
+		"https://admin.enterlink.app/api/personas"
+	);
+
 	return (
 		<>
 			<div className="flex flex-col gap-2">
@@ -140,22 +150,51 @@ function Personalities() {
 				</p>
 			</div>
 			<div className="grid grid-cols-1 gap-4 sm:grid-cols-[repeat(auto-fill,minmax(26rem,1fr))]">
-				<Adventurer />
-				<Analyst />
-				<Architect />
-				<Connector />
-				<Dreamer />
-				<Dynamo />
-				<Explorer />
-				<Guardian />
-				<Innovator />
-				<Pioneer />
-				<Producer />
-				<Scholar />
-				<Sentinel />
-				<Socialite />
-				<Visionary />
-				<Wanderer />
+				{error && <p className="text-xs text-red-500">{error.message}</p>}
+				{loading &&
+					Array.from({ length: 16 })
+						.fill(null)
+						.map((_, index) => (
+							<Skeleton className="h-32 w-full rounded-xl" key={index} />
+						))}
+				{data &&
+					data.map((personality) => (
+						<Card
+							description={personality.shortDescription}
+							key={personality.key}
+							title={personality.name}
+							traits={personality.traits.map((trait) => trait.name).join(", ")}
+						>
+							<h3>Metaverse Role</h3>
+							<p>{personality.description}</p>
+							<h3>Key Traits</h3>
+							<ul>
+								{personality.traits.map((trait) => (
+									<li key={trait.key}>
+										<p>
+											<b>{trait.name}</b>
+										</p>
+										<p className="-mt-2">{trait.description}</p>
+									</li>
+								))}
+							</ul>
+							<h3>Typical Activities in the Metaverse</h3>
+							<ul>
+								{personality.activities.map((activity, index) => (
+									<li key={index}>{activity}</li>
+								))}
+							</ul>
+							<h3>Value to Virtual Environments</h3>
+							<ul>
+								{personality.values.map((value, index) => (
+									<li key={index}>{value}</li>
+								))}
+							</ul>
+							<br />
+							<p>{personality.summary}</p>
+							<br />
+						</Card>
+					))}
 			</div>
 		</>
 	);
