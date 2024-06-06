@@ -41,28 +41,34 @@ export function SurveyInfo() {
 
 	return (
 		<section className="flex size-full flex-col items-center p-6">
-			<div className="flex w-full max-w-4xl flex-col gap-12">
+			<div className="flex w-full max-w-4xl flex-col gap-8">
 				<div className="flex flex-col gap-2">
 					<h1 className="text-4xl font-semibold">
 						VR Consumer Research Survey
 					</h1>
+					<h2 className="text font-semibold text-pink-400 sm:text-xl">
+						Bonus: Metaverse Personality Types
+					</h2>
 					<p className="mt-4 text-balance text-neutral-400">
 						Enterlink aims to streamline your navigation in virtual
 						environments, connecting you seamlessly with events, worlds, and
 						communities that match your interests.
 					</p>
-					<p className="text-balance text-neutral-400">
+					{/* <p className="text-balance text-neutral-400">
 						Thanks for helping us revolutionize your virtual world experience by
 						taking this survey.
-					</p>
+					</p> */}
 				</div>
 				<div className="flex flex-col gap-2">
-					<h2 className="text-balance text-xl font-semibold text-neutral-200 sm:text-xl">
+					<h2 className="text-balance text-lg font-semibold text-neutral-200 sm:text-xl">
 						Your privacy is paramount to us.
 					</h2>
-					<p className="text-balance text-neutral-400">
+					{/* <p className="text-balance text-neutral-400">
 						We do not sell your information. All data collected is strictly for
 						enhancing Enterlink and enriching your virtual interactions.
+					</p> */}
+					<p className="text-balance text-neutral-400">
+						We do not sell your information.
 					</p>
 				</div>
 				<div className="flex flex-col gap-4">
@@ -143,11 +149,11 @@ function Personalities() {
 					Discover which of the 16 unique virtual personalities you embody by
 					taking our survey!
 				</p>
-				<p className="text-balance text-neutral-400">
+				{/* <p className="text-balance text-neutral-400">
 					We&apos;ll send you a follow-up email with your personality at a later
 					date after completion of this survey. Each personality type offers a
 					distinct way to engage with and experience the virtual world.
-				</p>
+				</p> */}
 			</div>
 			<div className="grid grid-cols-1 gap-4 sm:grid-cols-[repeat(auto-fill,minmax(26rem,1fr))]">
 				{error && <p className="text-xs text-red-500">{error.message}</p>}
