@@ -132,7 +132,7 @@ function RewardPage() {
 		<section className="flex size-full flex-col items-center p-6">
 			<div className="flex w-full max-w-4xl flex-col gap-8">
 				<div className="flex flex-col gap-2">
-					<h1 className="text-3xl font-semibold">Metaverse Personality Type</h1>
+					<h1 className="text-3xl font-semibold">Metaverse Personality</h1>
 					<h2 className="text-xl font-semibold text-pink-400">Your type is:</h2>
 				</div>
 				{loading && <Loading />}
