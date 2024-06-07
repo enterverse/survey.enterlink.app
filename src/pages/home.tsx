@@ -63,7 +63,10 @@ export function SurveyInfo() {
 						>
 							Start Survey
 						</a>
-						<ShareButton href="https://survey.enterlink.app" />
+						<ShareButton
+							href="https://survey.enterlink.app"
+							shareText="Share this survey"
+						/>
 					</div>
 					<p className="text-xs text-neutral-500">
 						By taking the survey you agree to the{" "}
