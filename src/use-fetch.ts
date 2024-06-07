@@ -1,5 +1,28 @@
 import { useEffect, useState } from "react";
 
+export interface UseFetchResponseError {
+	data: null;
+	loading: false;
+	error: Error;
+}
+
+export interface UseFetchResponseLoading {
+	data: null;
+	loading: true;
+	error: null;
+}
+
+export interface UseFetchResponseSuccess<T> {
+	data: T;
+	loading: false;
+	error: null;
+}
+
+export type UseFetchResponse<T> =
+	| UseFetchResponseError
+	| UseFetchResponseLoading
+	| UseFetchResponseSuccess<T>;
+
 export const useFetch = <T>(url: string) => {
 	const [data, setData] = useState<T | null>(null);
 	const [loading, setLoading] = useState(true);
@@ -21,5 +44,5 @@ export const useFetch = <T>(url: string) => {
 		fetchData().catch(console.error);
 	}, [url]);
 
-	return { data, loading, error };
+	return { data, loading, error } as UseFetchResponse<T>;
 };

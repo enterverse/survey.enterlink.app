@@ -5,6 +5,16 @@ import { Drawer, DrawerClose, DrawerContent, DrawerTrigger } from "./drawer";
 
 import type { PropsWithChildren } from "react";
 
+function urlParametersToObject(search: URLSearchParams) {
+	const object: Record<string, string> = {};
+
+	for (const [key, value] of search) {
+		object[key] = value;
+	}
+
+	return object;
+}
+
 export function Card({
 	children,
 	title,
@@ -24,9 +34,17 @@ export function Card({
 			open={type === title.toLowerCase()}
 			onOpenChange={(state) => {
 				if (state) {
-					setParameters({ type: title.toLowerCase() });
+					setParameters((previous) => ({
+						...urlParametersToObject(previous),
+						type: title.toLowerCase()
+					}));
 				} else {
-					setParameters({});
+					setParameters((previous) => {
+						const object = urlParametersToObject(previous);
+						delete object.type;
+
+						return object;
+					});
 				}
 			}}
 		>
@@ -60,7 +78,7 @@ export function Card({
 							<h2 className="text-center text-lg text-neutral-400">{traits}</h2>
 						</div>
 						<div className="my-4 h-px w-full bg-neutral-800" />
-						<article className="prose prose-neutral prose-invert max-w-4xl">
+						<article className="prose prose-neutral prose-invert max-w-4xl prose-headings:font-medium">
 							{children}
 						</article>
 					</div>

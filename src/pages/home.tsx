@@ -1,11 +1,11 @@
-import { Share2 } from "lucide-react";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { copyToClipboard } from "../clipboard";
 import { useFetch } from "../use-fetch";
 import { Card } from "../components/card";
 import { Skeleton } from "../components/skeleton";
+import { ShareButton } from "../components/copy";
+
+import type { Personality } from "../personality";
 
 export function Home() {
 	return (
@@ -23,22 +23,6 @@ export function Home() {
 }
 
 export function SurveyInfo() {
-	const [copyText, setCopyText] = useState<string | null>(null);
-
-	useEffect(() => {
-		let timeout: number | null = null;
-
-		if (copyText) {
-			timeout = setTimeout(() => setCopyText(null), 3000);
-		}
-
-		return () => {
-			if (timeout) {
-				clearTimeout(timeout);
-			}
-		};
-	}, [copyText]);
-
 	return (
 		<section className="flex size-full flex-col items-center p-6">
 			<div className="flex w-full max-w-4xl flex-col gap-8">
@@ -46,7 +30,7 @@ export function SurveyInfo() {
 					<h1 className="text-4xl font-semibold">
 						VR Consumer Research Survey
 					</h1>
-					<h2 className="text font-semibold text-pink-400 sm:text-xl">
+					<h2 className="font-semibold text-pink-400 sm:text-xl">
 						Bonus: Metaverse Personality Types
 					</h2>
 					<p className="mt-4 text-balance text-neutral-400">
@@ -79,18 +63,7 @@ export function SurveyInfo() {
 						>
 							Start Survey
 						</a>
-						<button
-							className="flex w-52 flex-row items-center justify-center gap-2 rounded-full border border-neutral-800 py-2 transition-colors hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-neutral-50"
-							type="button"
-							onClick={() =>
-								// @ts-expect-error this is fine!
-								copyToClipboard("https://survey.enterlink.app") &&
-								setCopyText("Copied!")
-							}
-						>
-							<Share2 className="size-4" />
-							<p>{copyText || "Share"}</p>
-						</button>
+						<ShareButton href="https://survey.enterlink.app" />
 					</div>
 					<p className="text-xs text-neutral-500">
 						By taking the survey you agree to the{" "}
@@ -113,24 +86,6 @@ export function SurveyInfo() {
 			</div>
 		</section>
 	);
-}
-
-interface PersonalityTrait {
-	key: string;
-	name: string;
-	description: string;
-}
-
-interface Personality {
-	key: string;
-	name: string;
-	description: string;
-	shortDescription: string;
-	traits: Array<PersonalityTrait>;
-	activities: Array<string>;
-	values: Array<string>;
-	summary: string;
-	iconUrl: string;
 }
 
 function Personalities() {
@@ -178,7 +133,7 @@ function Personalities() {
 								{personality.traits.map((trait) => (
 									<li key={trait.key}>
 										<p>
-											<b>{trait.name}</b>
+											<b className="font-medium">{trait.name}</b>
 										</p>
 										<p className="-mt-2">{trait.description}</p>
 									</li>
