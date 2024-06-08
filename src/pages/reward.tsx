@@ -21,12 +21,12 @@ export function Reward() {
 					<img alt="enterlink" className="size-10" src="/logo.webp" />
 					<h1 className="text-lg font-semibold">enterlink</h1>
 				</Link>
-				<a
+				<Link
 					className="rounded-full border border-neutral-800 px-6 py-2 text-center transition-colors hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-neutral-50"
-					href="https://bca3h7pq3ya.typeform.com/to/dI1G7Kwe"
+					to="/"
 				>
 					Take Survey
-				</a>
+				</Link>
 			</nav>
 			<RewardPage />
 		</main>
