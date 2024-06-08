@@ -140,7 +140,7 @@ function RewardPage() {
 				<div className="flex flex-col gap-2">
 					<h1 className="text-3xl font-semibold">Metaverse Personality</h1>
 					<h2 className="text-xl font-semibold text-pink-400">
-						Your personality profile is:
+						Your personalized profile:
 					</h2>
 				</div>
 				{loading && <Loading />}
