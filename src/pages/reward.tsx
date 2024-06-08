@@ -48,7 +48,7 @@ interface RewardData {
 
 function Loading() {
 	return (
-		<div className="flex w-full max-w-4xl flex-col gap-8">
+		<div className="flex w-full max-w-4xl flex-col gap-12">
 			<Skeleton className="mx-auto size-52 shrink-0 rounded-full" />
 
 			<div className="flex animate-pulse flex-col gap-2 text-pink-400">
