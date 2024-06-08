@@ -65,7 +65,7 @@ export function SurveyInfo() {
 						</a>
 						<ShareButton
 							href="https://survey.enterlink.app"
-							shareText="Share this survey"
+							shareText="Share survey"
 						/>
 					</div>
 					<p className="text-xs text-neutral-500">
