@@ -183,6 +183,11 @@ function NavLink({
 	);
 }
 
+function replaceEscapedNewlines(string_: string) {
+	// eslint-disable-next-line unicorn/prefer-string-replace-all
+	return string_.replace(/\\n/g, "\n");
+}
+
 function RewardArea({
 	personality,
 	goldenPair,
@@ -200,7 +205,7 @@ function RewardArea({
 	const page = parameters.get("p");
 
 	const InjectMeOwO = {
-		default: <AboutYou lore={reward.genLore} />,
+		default: <AboutYou lore={replaceEscapedNewlines(reward.genLore)} />,
 		stats: (
 			<Stats
 				cvc={[reward.creativeScore, reward.consumptiveScore]}
