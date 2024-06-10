@@ -22,7 +22,7 @@ export function Reward() {
 					<h1 className="text-lg font-semibold">enterlink</h1>
 				</Link>
 				<Link
-					className="rounded-full border border-neutral-800 px-6 py-2 text-center transition-colors hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-neutral-50"
+					className="rounded-full bg-pink-600 px-6 py-2 text-center transition-colors hover:bg-pink-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-neutral-50"
 					to="/"
 				>
 					Take Survey
@@ -237,7 +237,7 @@ function RewardArea({
 			</div>
 			<ShareButton
 				className="mx-auto"
-				href={window.location.href}
+				href={window.location.origin + window.location.pathname}
 				shareText="Share your results"
 			/>
 			<div className="h-px w-full bg-neutral-800" />
@@ -629,6 +629,9 @@ function CompatibleTypes({
 						</Card>
 					))}
 				</div>
+				<Link className="text-pink-400 hover:text-pink-500" to="/">
+					see all types
+				</Link>
 			</div>
 			<div className="flex w-full flex-row items-center justify-start">
 				<BackButton to="?p=arche">Archetype</BackButton>
