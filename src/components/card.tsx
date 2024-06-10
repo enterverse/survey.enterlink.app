@@ -50,7 +50,7 @@ export function Card({
 		>
 			<DrawerTrigger asChild>
 				<button
-					className="flex size-full flex-row items-center gap-4 rounded-xl bg-neutral-900 p-6 transition-all hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-neutral-50"
+					className="flex h-fit w-full flex-row items-center gap-4 rounded-xl bg-neutral-900 p-6 transition-all hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-neutral-50"
 					type="button"
 				>
 					<img alt={title} className="size-20 shrink-0" src={href} />

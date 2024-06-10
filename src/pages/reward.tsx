@@ -633,6 +633,7 @@ function CompatibleTypes({
 					see all types
 				</Link>
 			</div>
+
 			<div className="flex w-full flex-row items-center justify-start">
 				<BackButton to="?p=arche">Archetype</BackButton>
 			</div>
