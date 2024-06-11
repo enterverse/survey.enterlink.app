@@ -34,9 +34,8 @@ export function SurveyInfo() {
 						Bonus: Metaverse Personality Types
 					</h2>
 					<p className="mt-4 text-balance text-neutral-400">
-						Enterlink aims to streamline your navigation in virtual
-						environments, connecting you seamlessly with events, worlds, and
-						communities that match your interests.
+						Enterlink is on a mission to enhance your personal connection to VR.
+						Share your insights and help us perfect our soon-to-launch service.
 					</p>
 					{/* <p className="text-balance text-neutral-400">
 						Thanks for helping us revolutionize your virtual world experience by
