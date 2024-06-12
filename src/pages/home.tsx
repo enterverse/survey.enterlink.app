@@ -51,7 +51,7 @@ export function SurveyInfo() {
 						enhancing Enterlink and enriching your virtual interactions.
 					</p> */}
 					<p className="text-balance text-neutral-400">
-						We do not sell your information.
+						We do not sell your personal information.
 					</p>
 				</div>
 				<div className="flex flex-col gap-4">
