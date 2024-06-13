@@ -253,12 +253,18 @@ function RewardArea({
 				<p className="text-sm text-neutral-400">
 					© VEU Inc. {new Date().getFullYear()} - All Rights Reserved
 				</p>
-				<Link
+				{/* <Link
 					className="rounded text-xs text-pink-400 transition-all hover:text-pink-500 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-neutral-50"
 					to="/terms"
 				>
 					Terms and Conditions
-				</Link>
+				</Link> */}
+				<a
+					className="rounded text-xs text-pink-400 transition-all hover:text-pink-500 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-neutral-50"
+					href="https://policies.enterlink.app/terms"
+				>
+					Terms and Conditions
+				</a>
 			</footer>
 		</div>
 	);
