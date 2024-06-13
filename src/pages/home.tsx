@@ -1,4 +1,4 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { useFetch } from "../use-fetch";
 import { Card } from "../components/card";
@@ -69,18 +69,12 @@ export function SurveyInfo() {
 					</div>
 					<p className="text-xs text-neutral-500">
 						By taking the survey you agree to the{" "}
-						{/* <Link
+						<Link
 							className="rounded underline focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-neutral-50"
 							to="/terms"
 						>
 							Terms and Conditions.
-						</Link> */}
-						<a
-							className="rounded underline focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-neutral-50"
-							href="https://policies.enterlink.app/terms"
-						>
-							Terms and Conditions.
-						</a>
+						</Link>
 					</p>
 				</div>
 				<div className="h-px w-full bg-neutral-800" />
